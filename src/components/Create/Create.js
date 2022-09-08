@@ -1,5 +1,5 @@
 import "./Create.css";
-import { useState } from "react";
+import { useState,useRef } from "react";
 
 import axios from "axios";
 
@@ -9,6 +9,8 @@ const Create = () => {
     const [content, setContent] = useState('');
     const [id, setId] = useState('');
    
+    const contentInputRef=useRef();
+
     const postData = () => {
      
         axios.post(`https://63187ed2ece2736550cb894c.mockapi.io/todos`, {
@@ -26,7 +28,7 @@ const Create = () => {
       <label>isCompleted</label>
       <input placeholder="iscompleted" onChange={(e) => setIsCompleted(e.target.value)}></input>
       <label>content</label>
-      <input placeholder="content" onChange={(e) => setContent(e.target.value)}></input>
+      <input placeholder="content" input={{type: "string",  min: "3", max: "15"}}  ref={contentInputRef} onChange={(e) => setContent(e.target.value)}></input>
       <button onClick={postData} type="submit">Submit</button>
        </form>
     
