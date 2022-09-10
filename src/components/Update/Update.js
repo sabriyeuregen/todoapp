@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
+import "./Update.css";
 
 const Update =(props)=>{
 
@@ -25,14 +26,14 @@ useEffect(() => {
 
     return(
 
-      <form >
+      <form className="update">
       <label>Id</label>
       <input placeholder="id" value={id} onChange={(e) => setId(e.target.value)}></input>
       <label>isCompleted</label>
       <input placeholder="iscompleted" value={isCompleted} onChange={(e) => setIsCompleted(e.target.value)}></input>
       <label>content</label>
       <input placeholder="content" value={content} onChange={(e) => setContent(e.target.value)}></input>
-      <button  onClick={updateAPIData}>Update</button>
+      <button className="update-button" onClick={updateAPIData}>Update</button>
        </form>
      
     )

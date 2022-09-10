@@ -34,14 +34,14 @@ const Create = () => {
     
 
     return(
-       <form >
+       <form className="create">
         <label>Id</label>
       <input placeholder="id" onChange={(e) => setId(e.target.value)}></input>
       <label>isCompleted</label>
       <input placeholder="iscompleted" onChange={(e) => setIsCompleted(e.target.value)}></input>
       <label>content</label>
       <input placeholder="content" type= "text"  minLength={3}  ref={contentInputRef} onChange={(e) => setContent(e.target.value)}></input>
-      <button onClick={postData} type="submit">Submit</button>
+      <button className="create-button" onClick={postData} type="submit">Create</button>
       {!contentInput && <p>Please enter a valid input (min 3 length)</p>}
        </form>
     

@@ -1,5 +1,6 @@
 import { useState,useEffect} from "react";
 import axios from "axios";
+import "./Read.css";
 
 const Read =()=>{
 
@@ -44,15 +45,15 @@ const Read =()=>{
 
 
     return(
-    <div>
+    <div className="todo">
      {
           apiData.map((todo) => (
-        <div>
-        <div>{todo.id}</div>
-        <div>{todo.content}</div>
-        <div>{String(todo.isCompleted)}</div>
-        <div><button onClick={() => setData(todo)}>Update</button></div>
-        <div><button onClick={() => onDelete(todo.id)}>Delete</button></div>
+        <div className="todo-card">
+        <div >{todo.id}</div>
+        <div >{todo.content}</div>
+        <div className="todo-card__completed">{String(todo.isCompleted)}</div>
+        <button className="todo-card__update" onClick={() => setData(todo)}>Update</button>
+        <button  className="todo-card__delete" onClick={() => onDelete(todo.id)}>Delete</button>
         </div>
        ) )
      }

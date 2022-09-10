@@ -1,13 +1,13 @@
-.create{
+.update{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #ddd;
     padding: 8px;
     width: 60%;
-    height: 40%;
+    height: 40%;   
 }
-.create-button{
+.update-button{
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
